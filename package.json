@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-chersquwn",
+  "version": "1.0.0",
+  "description": "Eslint config for Chersquwn",
+  "main": "index.js",
+  "author": "Chersquwn",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:Chersquwn/eslint-config-chersquwn.git"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6"
+  }
+}
