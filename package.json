@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "Chersquwn",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "keywords": [
     "eslint",
     "eslint-config",
