@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-chersquwn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint config for Chersquwn",
   "main": "index.js",
   "author": "Chersquwn",
