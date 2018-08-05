@@ -230,7 +230,6 @@ module.exports = {
     // @fix 限制每行的 props 数量
     'react/jsx-max-props-per-line': [
       'error',
-      1,
       { 
         when: "multiline" 
       }
