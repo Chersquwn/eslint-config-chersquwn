@@ -6,6 +6,12 @@
   "author": "Chersquwn",
   "license": "MIT",
   "private": true,
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "react",
+    "javascript"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com:Chersquwn/eslint-config-chersquwn.git"
