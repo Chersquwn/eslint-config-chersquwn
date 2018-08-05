@@ -246,7 +246,8 @@ module.exports = {
     'react/jsx-no-duplicate-props': 'error',
 
     // 禁止在 jsx 中出现字符串
-    'react/jsx-no-literals': ['error', { noStrings: true }],
+    // @off 没必要限制
+    'react/jsx-no-literals': 'off',
 
     // 禁止使用 target="_blank"
     'react/jsx-no-target-blank': 'error',
