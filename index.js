@@ -21,9 +21,6 @@ module.exports = {
     es6: true,
   },
   root: true,
-  plugins: [
-    'import'
-  ],
   rules: {
     /* ---------- 这些规则与 JavaScript 代码中可能的错误或逻辑错误有关 ---------- */
     // 禁止 for 循环出现方向错误的循环，比如 for (i = 0; i < 10; i--)
