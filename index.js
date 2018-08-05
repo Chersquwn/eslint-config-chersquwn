@@ -179,8 +179,8 @@ module.exports = {
     'block-scoped-var': 'error',
 
     // 在类的非静态方法中，必须存在对 this 的引用
-    // @warn 太严格了
-    'class-methods-use-this': 'warn',
+    // @off 太严格了
+    'class-methods-use-this': 'off',
 
     // 禁止函数的循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity
     // @warn 函数循环复杂度尽量控制在20以内
