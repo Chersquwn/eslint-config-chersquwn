@@ -194,7 +194,16 @@ module.exports = {
     '@typescript-eslint/prefer-namespace-keyword': 'off',
 
     // 返回promise的函数必须是异步的
-    '@typescript-eslint/promise-function-async': 'error',
+    '@typescript-eslint/promise-function-async': [
+      'error',
+      {
+        allowedPromiseNames: ['Thenable'],
+        checkArrowFunctions: true,
+        checkFunctionDeclarations: true,
+        checkFunctionExpressions: true,
+        checkMethodDeclarations: true
+      }
+    ],
 
     // 强制给出array＃sort的compare参数
     '@typescript-eslint/require-array-sort-compare': 'error',
