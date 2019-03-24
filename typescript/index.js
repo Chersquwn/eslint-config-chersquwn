@@ -74,7 +74,19 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
 
     // @fix 接口和类型字面量中每一行都必须以分号结尾
-    '@typescript-eslint/member-delimiter-style': 'error',
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: false
+        }
+      }
+    ],
 
     // 私有变量命名必须以下划线开头
     // @off 没必要限制
