@@ -1,25 +1,20 @@
-
 /**
  * Chersquwn 个人使用的React Eslint规则
- * 
+ *
  * @fix 表示此配置支持 --fix
  * @warn 警告
  * @off 关闭
  */
 
 module.exports = {
-  extends: [
-    '../index.js',
-  ],
-  plugins: [
-    'react',
-  ],
+  extends: ['../index.js'],
+  plugins: ['react', 'react-hooks'],
   rules: {
     // 布尔值类型的 propTypes 的 name 必须为 is 或 has 开头
     // @off 不强制要求写 propTypes
     'react/boolean-prop-naming': 'off',
 
-    // button必须要有type
+    // button 必须要有 type
     'react/button-has-type': 'error',
 
     // 一个 defaultProps 必须有对应的 propTypes
@@ -128,10 +123,7 @@ module.exports = {
     'react/no-will-update-set-state': 'error',
 
     // 必须使用 Class 的形式创建组件
-    'react/prefer-es6-class': [
-      'error',
-      'always'
-    ],
+    'react/prefer-es6-class': ['error', 'always'],
 
     // 必须使用 pure function
     // @off 没必要限制
@@ -230,8 +222,8 @@ module.exports = {
     // @fix 限制每行的 props 数量
     'react/jsx-max-props-per-line': [
       'error',
-      { 
-        when: "multiline" 
+      {
+        when: 'multiline'
       }
     ],
 
@@ -285,6 +277,12 @@ module.exports = {
 
     // @fix 多行的 jsx 必须有括号包起来
     // @off 没必要限制
-    'react/jsx-wrap-multilines': 'off'
+    'react/jsx-wrap-multilines': 'off',
+
+    // 校验react-hooks的规则
+    'react-hooks/rules-of-hooks': 'error',
+
+    // 校验react-hooks副作用的依赖项
+    'react-hooks/exhaustive-deps': 'warn'
   }
-}
+};
