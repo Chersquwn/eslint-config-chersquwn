@@ -59,7 +59,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'error',
 
     // 必须手动指定类的属性和方法的可访问性（private 或 public）
-    'typescript/explicit-member-accessibility': 'error',
+    '@typescript-eslint/explicit-member-accessibility': 'error',
 
     // 允许您对类型变量强制执行约定。
     // @off 太严格了，匈牙利命名方式不一定可取
