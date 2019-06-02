@@ -254,7 +254,11 @@ module.exports = {
     'react/jsx-sort-default-props': 'warn',
 
     // @fix props 必须排好序
-    'react/jsx-sort-props': 'warn',
+    'react/jsx-sort-props': ['warn', {
+      callbacksLast: true,
+      reservedFirst: true,
+      shorthandFirst: true,
+    }],
 
     // @fix jsx 的闭合处必须有空格
     'react/jsx-space-before-closing': ['error', 'always'],

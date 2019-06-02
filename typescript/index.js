@@ -56,7 +56,7 @@ module.exports = {
     '@typescript-eslint/class-name-casing': 'error',
 
     // 函数和类方法必须指定返回类型
-    '@typescript-eslint/explicit-function-return-type': 'error',
+    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true, allowTypedFunctionExpressions: true }],
 
     // 必须手动指定类的属性和方法的可访问性（private 或 public）
     '@typescript-eslint/explicit-member-accessibility': 'error',
