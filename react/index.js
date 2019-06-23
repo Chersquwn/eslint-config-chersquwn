@@ -15,7 +15,8 @@ module.exports = {
     'react/boolean-prop-naming': 'off',
 
     // button 必须要有 type
-    'react/button-has-type': 'error',
+    // @off 因为无法使用动态的声明
+    'react/button-has-type': 'off',
 
     // 一个 defaultProps 必须有对应的 propTypes
     // @off 不强制要求写 propTypes
