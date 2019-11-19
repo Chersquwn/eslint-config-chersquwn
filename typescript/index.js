@@ -29,7 +29,7 @@ module.exports = {
     '@typescript-eslint/adjacent-overload-signatures': 'error',
 
     // @fix 使用数组类型使用T[]，而不是Array<T>
-    '@typescript-eslint/array-type': ['error', 'array'],
+    '@typescript-eslint/array-type': ['error', { default: 'array' }],
 
     // 禁止使用 "// @ts-ignore" 的注释
     '@typescript-eslint/ban-ts-ignore': 'error',
@@ -59,7 +59,14 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 
     // 函数和类方法必须指定返回类型
-    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true, allowTypedFunctionExpressions: true }],
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: true,
+        allowHigherOrderFunctions: true
+      }
+    ],
 
     // 必须手动指定类的属性和方法的可访问性（private 或 public）
     '@typescript-eslint/explicit-member-accessibility': 'error',
@@ -271,4 +278,4 @@ module.exports = {
     // 如果通过使用union或optional / rest参数可以统一为一个的重载，禁止拆成多个。
     '@typescript-eslint/unified-signatures': 'warn'
   }
-};
+}
