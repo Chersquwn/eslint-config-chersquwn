@@ -55,6 +55,9 @@ module.exports = {
     // 类和接口的命名必须遵守帕斯卡命名法，比如 PersianCat
     '@typescript-eslint/class-name-casing': 'error',
 
+    // 优先使用 interface 而不是 type
+    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+
     // 函数和类方法必须指定返回类型
     '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true, allowTypedFunctionExpressions: true }],
 
@@ -102,11 +105,14 @@ module.exports = {
     // @fix 禁止使用 Array 构造函数来初始化数组，除非指定了泛型，或传入的是单个数字
     '@typescript-eslint/no-array-constructor': 'error',
 
+    // 禁止 delete 时传入的 key 是动态的
+    '@typescript-eslint/no-dynamic-delete': 'error',
+
     // 禁止使用空接口
     '@typescript-eslint/no-empty-interface': [
       'error',
       {
-        allowSingleExtends: false
+        allowSingleExtends: true
       }
     ],
 
@@ -117,6 +123,10 @@ module.exports = {
     // 禁止将类用作命名空间
     // @off 不推荐
     '@typescript-eslint/no-extraneous-class': 'off',
+
+    // 禁止调用 Promise 时没有处理异常情况
+    // @off 太严格了
+    '@typescript-eslint/no-floating-promises': 'off',
 
     // 禁止使用for-in循环遍历数组
     // @off 太严格了
@@ -133,8 +143,9 @@ module.exports = {
     // 用 namespace 或 module 来定义模块是以前的用法，现在已经有了 import 和 export
     '@typescript-eslint/no-namespace': 'error',
 
-    // 禁止使用非空断言 后缀运算符！
-    '@typescript-eslint/no-non-null-assertion': 'error',
+    // 禁止使用 non- null 断言（感叹号）
+    // 使用 non - null 断言时就已经清楚了风险
+    '@typescript-eslint/no-non-null-assertion': 'off',
 
     // 禁止对象文字出现在类型断言表达式中
     // @off 太严格了，在jsx中只能使用 as
@@ -156,9 +167,6 @@ module.exports = {
       }
     ],
 
-    // 禁止使用三斜线注释
-    '@typescript-eslint/no-triple-slash-reference': 'error',
-
     // 限制 type 的使用
     // @off 没必要限制
     '@typescript-eslint/no-type-alias': 'off',
@@ -170,6 +178,9 @@ module.exports = {
     // 禁止不必要的类型断言
     // @off 非推荐
     '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+
+    // public 方法必须定义输入输出参数的类型
+    '@typescript-eslint/no-untyped-public-signature': 'off',
 
     // 定义过的变量必须使用
     // eslint 原生的 no-unused-vars 无法使用，需要使用 typescript-eslint/no-unused-vars
@@ -198,12 +209,19 @@ module.exports = {
     // @off 非推荐
     '@typescript-eslint/prefer-function-type': 'off',
 
-    // @fix 首选类型文字的接口声明
-    '@typescript-eslint/prefer-interface': 'error',
+    // 使用 includes 替代 indexOf
+    '@typescript-eslint/prefer-includes': 'error',
 
     // 使用 namespace 代替 module
     // @off typescirpt/no-namespace 已经禁用了 namespace 和 module
     '@typescript-eslint/prefer-namespace-keyword': 'off',
+
+    // 使用 RegExp#exec 而不是 String#match
+    // @off 非推荐
+    '@typescript-eslint/prefer-regexp-exec': 'off',
+
+    // 使用 startsWith 和 endsWith
+    '@typescript-eslint/prefer-string-starts-ends-with': 'error',
 
     // 返回promise的函数必须是异步的
     '@typescript-eslint/promise-function-async': [
@@ -224,9 +242,31 @@ module.exports = {
     // @off 太严格了
     '@typescript-eslint/restrict-plus-operands': 'off',
 
+    // 模版字符串中的变量类型必须是字符串
+    // @off 太严格了
+    '@typescript-eslint/restrict-template-expressions': 'off',
+
+    // 条件判断必须传入布尔值
+    // @off 不传入布尔值可以简化代码
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+
     // 类型定义的冒号前后是否需要空格
     // 默认冒号前必须没有空格，冒号后必须有空格
     '@typescript-eslint/type-annotation-spacing': 'error',
+
+    // interface 和 type 定义时必须声明成员的类型
+    '@typescript-eslint/typedef': [
+      'error',
+      {
+        arrayDestructuring: false,
+        arrowParameter: false,
+        memberVariableDeclaration: false,
+        objectDestructuring: false,
+        parameter: false,
+        propertyDeclaration: true,
+        variableDeclaration: false
+      }
+    ],
 
     // 如果通过使用union或optional / rest参数可以统一为一个的重载，禁止拆成多个。
     '@typescript-eslint/unified-signatures': 'warn'
