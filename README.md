@@ -43,3 +43,21 @@ module.exports = {
   }
 }
 ```
+
+### TypeScript
+
+在项目根目录下创建`.eslintrc.js`文件，文件内容如下：
+
+```javascript
+module.exports = {
+  extends: [
+    'chersquwn/typescript'
+  ],
+  globals: {
+    // 全局变量
+  },
+  rules: {
+    // 要覆盖的规则配置
+  }
+}
+```
